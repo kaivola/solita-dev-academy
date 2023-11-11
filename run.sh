@@ -17,10 +17,11 @@ fi
 (
   cd solita-dev-academy-backend || print_error "Backend dir doesn't exist"
   print_info "Starting docker image build"
-  if ! docker compose up --build --force-recreate -d; then
-    print_error "Building and running backend docker image failed"
-  fi
+  docker compose up --build --force-recreate -d
 )
+if [ $? -ne 0 ]; then
+    print_error "Building and running backend docker image failed"
+fi
 print_info "Cloning frontend repository"
 if ! git clone git@github.com:kaivola/solita-dev-academy-frontend.git; then
   print_error "Cloning frontend repository failed"
