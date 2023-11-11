@@ -26,7 +26,7 @@ https://academy.kaivola.cloud
 <details>
 <summary>Using the provided script</summary>
 
-Clone, build and run both the backend and the frontend by running:
+Clone, build, and run both the backend and the frontend by running:
 
 ```
 ./run.sh
@@ -42,11 +42,11 @@ Optionally you can also set up the app manually:
 
 **Backend**
 
-Clone the repo
+Clone the repo:
 ```
  git clone git@github.com:kaivola/solita-dev-academy-backend.git
 ```
-Change into the cloned dir and build and run the Docker image
+Change into the cloned dir and build and run the Docker image:
 ```
 docker compose up --build --force-recreate -d
 ```
@@ -54,19 +54,19 @@ Backend should now be listening at port 8080
 
 **Frontend**
 
-Clone the repo
+Clone the repo:
 ```
  git clone git@github.com:kaivola/solita-dev-academy-frontend.git
 ```
-Change into the cloned dir and after that install dependencies
+Change into the cloned dir and after that install dependencies:
 ```
 npm i
 ```
-After all the dependencies have installed you can finally build the frontend
+After all the dependencies have installed you can finally build the frontend:
 ```
 npm run build
 ```
-After build finishes successfully you can start serving the frontend
+After the build finishes successfully you can start serving the frontend:
 ```
 npm run start
 ```
@@ -94,6 +94,8 @@ Backend repo at https://github.com/kaivola/solita-dev-academy-backend
 
 ✅ Link to single station views
 
+✅ Sort by distance from the user
+
 ### Single station view
 ✅ Station name
 
@@ -106,6 +108,8 @@ Backend repo at https://github.com/kaivola/solita-dev-academy-backend
 ✅ Average distance of journeys starting from the station
 
 ✅ Avarage duration of journeys starting from the station
+
+✅ Top 5 destination stations
 
 ## Notes
 In case the error seen in the picture happens, just wait a few seconds and refresh the page and the error should be gone.
