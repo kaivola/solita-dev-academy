@@ -4,26 +4,39 @@
 
 See the assignment at https://github.com/solita/dev-academy-spring-2024-exercise
 
+## Live demo
+
+https://academy.kaivola.cloud
+
 ## Running instructions
 
-### Requirements
+<details>
+    <summary>Requirements</summary>
+
+- Git
 - Docker
 - Node
-- Git
 - npm
 - Unix-like OS (or WSL2 or Git Bash)
 
-Also make sure that you have the provided database running. If not, follow the steps in the [assignment repo](https://github.com/solita/dev-academy-spring-2024-exercise) to get it set up and running.
+**Also make sure that you have the provided database running. If not, please follow the steps in the [assignment repository](https://github.com/solita/dev-academy-spring-2024-exercise) to get it set up and running.**
+</details>
 
-### Using the provided script
+### Building
+<details>
+<summary>Using the provided script</summary>
+
 Clone, build and run both the backend and the frontend by running:
 
 ```
-run.sh
+./run.sh
 ```
 
 If the script didn't fail you can now access the app at http://localhost:3000
-### Manually
+</details>
+
+<details>
+<summary>Manually</summary>
 
 Optionally you can also set up the app manually:
 
@@ -59,6 +72,8 @@ npm run start
 ```
 The app should now be accessible at http://localhost:3000
 
+</details>
+
 ## Tech stack
 ### Frontend
 Frontend repo at https://github.com/kaivola/solita-dev-academy-frontend
@@ -76,13 +91,24 @@ Backend repo at https://github.com/kaivola/solita-dev-academy-backend
 ## Features implemented
 ### Station list
 ✅ List all stations
+
 ✅ Link to single station views
 
 ### Single station view
 ✅ Station name
+
 ✅ Station address
+
 ✅ Total number of journeys starting from the station
+
 ✅ Total number of journeys ending at the station
+
 ✅ Average distance of journeys starting from the station
+
 ✅ Avarage duration of journeys starting from the station
 
+## Notes
+In case the error seen in the picture happens, just wait a few seconds and refresh the page and the error should be gone.
+This happens because the map tiling provider has rate limits for free tier customers.
+
+![tile error](./assets/tile_error.png)
