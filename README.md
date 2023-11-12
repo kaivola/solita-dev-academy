@@ -32,7 +32,7 @@ Clone, build, and run both the backend and the frontend by running:
 ./run.sh
 ```
 
-If the script didn't fail you can now access the app at http://localhost:3000
+If the script didn't fail, you should now be able to access the app at http://localhost:3000
 </details>
 
 <details>
