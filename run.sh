@@ -10,9 +10,11 @@ function print_error() {
 function print_info() {
   echo -e "${BOLD}${BLUE}-----------------$1-----------------${NC}"
 }
-print_info "Cloning backend repository"
-if ! git clone git@github.com:kaivola/solita-dev-academy-backend.git; then
-  print_error "Cloning backend repository failed"
+if [ ! -d "./solita-dev-academy-backend" ]; then
+    print_info "Cloning backend repository"
+    if ! git clone git@github.com:kaivola/solita-dev-academy-backend.git; then
+      print_error "Cloning backend repository failed"
+    fi
 fi
 (
   cd solita-dev-academy-backend || print_error "Backend dir doesn't exist"
@@ -22,16 +24,21 @@ fi
 if [ $? -ne 0 ]; then
     print_error "Building and running backend docker image failed"
 fi
-print_info "Cloning frontend repository"
-if ! git clone git@github.com:kaivola/solita-dev-academy-frontend.git; then
-  print_error "Cloning frontend repository failed"
+if [ ! -d "./solita-dev-academy-frontend" ]; then
+  print_info "Cloning frontend repository"
+  if ! git clone git@github.com:kaivola/solita-dev-academy-frontend.git; then
+    print_error "Cloning frontend repository failed"
+  fi
 fi
 (
   cd solita-dev-academy-frontend || print_error "Frontend dir doesn't exist"
-  npm i
+  print_info "Installing dependencies"
+  NODE_ENV=production
+  npm ci
+  print_info "Started building the frontend"
   if ! npm run build; then
     print_error "Building the frontend failed"
   fi
+  print_info "Build succeeded: starting server"
   npm run start
 )
-
